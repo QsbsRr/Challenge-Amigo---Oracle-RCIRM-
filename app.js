@@ -17,5 +17,37 @@ function agregarAmigo()
 
      //Limpiando el campo de entrada
     document.getElementById('amigo').value = '';
+
+    //Obteniendo la lista de amigos desde el HTML
+    let listaAmigos = document.getElementById('listaAmigos');
+    listaAmigos.innerHTML = '';
+    amigosSecretos.forEach(agregarListaAmigos)
+
 }
 
+function agregarListaAmigos()
+{
+    listaAmigos.innerHTML = amigos.map(nombre => 
+        `<li>${nombre}</li>`
+    ).join('');
+}
+
+
+
+
+
+
+
+
+
+
+//function sortearAmigo() {
+    // Verificar amigos registrados
+    //if (amigos.length === 0) {
+
+// //Obteniendo la lista de amigos desde el HTML
+//let listaAmigos = document.getElementById('listaAmigos');
+//listaAmigos.innerHTML = '';
+//listaAmigos.innerHTML = amigos.map(nombre => 
+//    `<li>${nombre}</li>`
+//).join('');
