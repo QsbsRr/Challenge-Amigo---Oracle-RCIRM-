@@ -13,7 +13,7 @@ function agregarAmigo()
         return;
      }
     //Agregar la entrada del usuario a la lista de amigos
-     amigosSecretos.push(input);
+     amigosSecretos.push(input.value);
 
      //Limpiando el campo de entrada
     document.getElementById('amigo').value = '';
@@ -21,16 +21,15 @@ function agregarAmigo()
     //Obteniendo la lista de amigos desde el HTML
     let listaAmigos = document.getElementById('listaAmigos');
     listaAmigos.innerHTML = '';
-    amigosSecretos.forEach(agregarListaAmigos)
 
+    for(let i = 0; i < amigosSecretos.length; i++){
+        var li = document.createElement('li');
+        li.appendChild(document.createTextNode(amigosSecretos[i]));
+        listaAmigos.appendChild(li);
+    }
 }
 
-function agregarListaAmigos()
-{
-    listaAmigos.innerHTML = amigos.map(nombre => 
-        `<li>${nombre}</li>`
-    ).join('');
-}
+
 
 
 
