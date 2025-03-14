@@ -22,11 +22,29 @@ function agregarAmigo()
     let listaAmigos = document.getElementById('listaAmigos');
     listaAmigos.innerHTML = '';
 
-    for(let i = 0; i < amigosSecretos.length; i++){
+    for(let i = 0; i < amigosSecretos.length; i++)
+    {
         var li = document.createElement('li');
         li.appendChild(document.createTextNode(amigosSecretos[i]));
         listaAmigos.appendChild(li);
     }
+}
+
+function sortearAmigo() {
+    //Verificar amigos registrados
+    if (amigosSecretos.length == 0) 
+    {
+        alert('No has agregado a nadie. Escribe los nombres de tus amigos')
+    return;
+    }
+
+    //Elección de amigos al azar
+    const indiceAleatorio = Math.floor(Math.random() * amigosSecretos.length);
+    const amigoElegido = amigosSecretos[indiceAleatorio];
+
+    //Resultado
+    const resultado = document.getElementById('resultado');
+    resultado.innerHTML = `<li>${amigoElegido}</li>`;
 }
 
 
@@ -40,9 +58,6 @@ function agregarAmigo()
 
 
 
-//function sortearAmigo() {
-    // Verificar amigos registrados
-    //if (amigos.length === 0) {
 
 // //Obteniendo la lista de amigos desde el HTML
 //let listaAmigos = document.getElementById('listaAmigos');
