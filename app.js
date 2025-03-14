@@ -3,13 +3,19 @@ let amigosSecretos = [];
 
 function agregarAmigo() 
 {
-    const input = document.getElementById('amigo'); //Capturar el valor de campo de entrada
-    if (input.length == 0) //Validando que el campo no esté vacío
-        {
-        alert('Introduce el nombre de tu amigo');
+    //Capturar el valor de campo de entrada
+    const input = document.getElementById('amigo');
+    const nombre = input.value.trim();
+
+     //Validando el Campo vacío
+     if (!nombre) {
+        alert('Por favor, inserte un nombre.');
         return;
-        }
-    amigosSecretos.push(input); //Agregar la entrada del usuario a la lista de amigos
-    document.getElementById('amigo').value = ''; //Limpiando el campo de entrada
+     }
+    //Agregar la entrada del usuario a la lista de amigos
+     amigosSecretos.push(input);
+
+     //Limpiando el campo de entrada
+    document.getElementById('amigo').value = '';
 }
 
